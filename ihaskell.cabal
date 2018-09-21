@@ -113,9 +113,9 @@ library
                    IHaskell.Types
                    IHaskell.BrokenPackages
                    IHaskell.CSS
+                   IHaskellPrelude
                    Paths_ihaskell
   other-modules:
-                   IHaskellPrelude
                    StringUtils
 
 executable ihaskell
@@ -123,7 +123,6 @@ executable ihaskell
   main-is:             Main.hs
   hs-source-dirs: main
   other-modules:
-                   IHaskellPrelude
                    Paths_ihaskell
   ghc-options: -threaded -rtsopts -Wall
 
@@ -161,6 +160,7 @@ Test-Suite hspec
         IHaskell.Test.Completion
         IHaskell.Test.Util
         IHaskell.Test.Parser
+        IHaskell.Test.Hoogle
     default-language: Haskell2010
     build-depends:
         base,
@@ -175,6 +175,7 @@ Test-Suite hspec
         directory,
         text,
         shelly,
+        raw-strings-qq,
         setenv
 
 source-repository head
